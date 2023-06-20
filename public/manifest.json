@@ -2,6 +2,7 @@
   "name": "Bars",
   "api": "1.0.0",
   "main": "code.js",
+  "id": "1252800305273355573",
   "editorType": ["figma"],
   "ui": "index.html"
 }
