@@ -5,6 +5,7 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import svg from 'rollup-plugin-svg';
 import typescript from 'rollup-plugin-typescript';
+import sveltePreprocess from 'svelte-preprocess';
 
 /* Post CSS */
 import postcss from 'rollup-plugin-postcss';
@@ -25,7 +26,14 @@ export default [{
 	plugins: [
 		svelte({
 			// enable run-time checks when not in production
-			dev: !production
+			dev: !production,
+			preprocess: sveltePreprocess({
+				sourceMap: !production,
+				postcss: true
+			}),
+			// compilerOptions: {
+			// 	dev: !production
+			// }
 		}),
 
 		// If you have external dependencies installed from
