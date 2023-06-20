@@ -202,13 +202,13 @@ const drawChart = async () => {
 			value.textAlignVertical = 'CENTER';
 
 			// if width of bar is less then width of value + 8, append value to bar, else append value to barContainer
-			if (bar.width < value.width + barPadding.right + barPadding.left) {
-				bar.appendChild(value);
-				barContainer.appendChild(bar);
-			} else {
-				barContainer.appendChild(bar);
-				barContainer.appendChild(value);
-			}
+			// if (bar.width < value.width + barPadding.right + barPadding.left) {
+			// 	bar.appendChild(value);
+			// 	barContainer.appendChild(bar);
+			// } else {
+			barContainer.appendChild(bar);
+			barContainer.appendChild(value);
+			// }
 		} else {
 			barContainer.appendChild(bar);
 		}
