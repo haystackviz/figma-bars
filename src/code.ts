@@ -227,12 +227,13 @@ const drawChart = async () => {
 		tickFrame.layoutMode = 'HORIZONTAL';
 		tickFrame.counterAxisAlignItems = 'MIN';
 		tickFrame.primaryAxisAlignItems = "SPACE_BETWEEN"
-		tickFrame.layoutAlign = 'STRETCH';
+		// tickFrame.layoutAlign = 'STRETCH';
 		tickFrame.primaryAxisSizingMode = 'FIXED'
 		tickFrame.counterAxisSizingMode = 'AUTO';
 		tickFrame.paddingLeft = leftMargin + rowSpacing;
 		tickFrame.clipsContent = false;
 		tickFrame.fills = [];
+		tickFrame.resize((chart.width - chartPadding.right - chartPadding.left - leftMargin - rowSpacing - (showValues ? maxValueWidth + rowSpacing : 0)) * ticks[ticks.length - 1] / max + leftMargin + rowSpacing, 16);
 
 		// create a vertical autolayout frame for each xTick, with a width of 1
 		for (let i = 0; i < ticks.length; i++) {
